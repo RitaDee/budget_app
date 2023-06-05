@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_132144) do
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_deals_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,4 +36,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_132144) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "deals", "users", column: "author_id"
 end
