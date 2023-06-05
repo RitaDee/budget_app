@@ -15,7 +15,6 @@ class DealsTest < ApplicationSystemTestCase
     click_on "New deal"
 
     fill_in "Amount", with: @deal.amount
-    fill_in "Author", with: @deal.author_id
     fill_in "Name", with: @deal.name
     click_on "Create Deal"
 
@@ -28,7 +27,6 @@ class DealsTest < ApplicationSystemTestCase
     click_on "Edit this deal", match: :first
 
     fill_in "Amount", with: @deal.amount
-    fill_in "Author", with: @deal.author_id
     fill_in "Name", with: @deal.name
     click_on "Update Deal"
 
