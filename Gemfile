@@ -7,6 +7,8 @@ gem "image_processing", ">= 1.2"
 
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
+gem 'devise'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
