@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @deal_category %>
+
+<div>
+  <%= link_to "Edit this deal category", edit_deal_category_path(@deal_category) %> |
+  <%= link_to "Back to deal categories", deal_categories_path %>
+
+  <%= button_to "Destroy this deal category", @deal_category, method: :delete %>
+</div>

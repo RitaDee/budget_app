@@ -1,0 +1,8 @@
+<%= render @deal %>
+
+<div>
+  <%= link_to "Edit this deal", edit_deal_path(@deal) %> |
+  <%= link_to "Back to deals", deals_path %>
+
+  <%= button_to "Destroy this deal", @deal, method: :delete %>
+</div>
