@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :user_params, only: [:create, :update, :destroy]
+  before_action :user_params, only: %i[create update destroy]
 
   # GET /users or /users.json
   def index
