@@ -1,14 +1,18 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
+<%= render partial: 'shared/nav', locals: {title: 'Categories', symbol:'', url: ''}%>
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
+    <div class='deal'>
+      <h2 class='category_left'>
+        <p><%= image_tag category.icon, class: 'category_icon' %></p>
+        <%= link_to category_deals_path(category.id) do %>
+          <h3 class='category_name'><%= category.name %></h3>
+        <% end %>
+      </h2>
+    </div>
     <p>
       <%= link_to "Show this category", category %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<button><%= link_to "Add New category", new_category_path %></button>

@@ -3,7 +3,11 @@ class DealsController < ApplicationController
 
   # GET /deals or /deals.json
   def index
-    @deals = Deal.all
+    @category = Category.find(params[:category_id])
+    # @deals = Deal.all
+    @deal_category = DealCategory.all
+    @deals = @category.deals.order(created_at: :desc)
+    # @deals = DealCategory.includes(:deal).where(category_id: @category.id)
   end
 
   # GET /deals/1 or /deals/1.json
@@ -11,6 +15,7 @@ class DealsController < ApplicationController
 
   # GET /deals/new
   def new
+    @category = Category.find(params[:category_id])
     @deal = Deal.new
   end
 
@@ -20,10 +25,14 @@ class DealsController < ApplicationController
   # POST /deals or /deals.json
   def create
     @deal = Deal.new(deal_params)
+    @deal.author = current_user
+    category_id = params[:category_id]
+    puts category_id
 
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to deal_url(@deal), notice: 'Deal was successfully created.' }
+        DealCategory.create(deal_id: @deal.id, category_id: category_id)
+        format.html { redirect_to category_deals_path, notice: 'Deal was successfully created.' }
         format.json { render :show, status: :created, location: @deal }
       else
         format.html { render :new, status: :unprocessable_entity }
