@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Deal categories</h1>
+
+<div id="deal_categories">
+  <% @deal_categories.each do |deal_category| %>
+    <%= render deal_category %>
+  <% end %>
+</div>
+
+<%= link_to "New deal category", new_deal_category_path %>

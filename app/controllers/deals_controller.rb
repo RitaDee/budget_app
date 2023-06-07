@@ -4,9 +4,10 @@ class DealsController < ApplicationController
   # GET /deals or /deals.json
   def index
     @category = Category.find(params[:category_id])
-    @deals = Deal.all
+    # @deals = Deal.all
     @deal_category = DealCategory.all
-    @deals = @category.deals
+    @deals = @category.deals.order(created_at: :desc)
+    # @deals = DealCategory.includes(:deal).where(category_id: @category.id)
   end
 
   # GET /deals/1 or /deals/1.json
@@ -14,6 +15,7 @@ class DealsController < ApplicationController
 
   # GET /deals/new
   def new
+    @category = Category.find(params[:category_id])
     @deal = Deal.new
   end
 
