@@ -1,12 +1,9 @@
 <h1>Deals</h1>
-
+<%= @deal_category.count %>
 <div id="deals">
   <% @deals.each do |deal| %>
     <%= render deal %>
-    <p>
-      <%= link_to "Show this deal", deal %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New deal", new_deal_path %>
+<%= link_to "New deal", new_category_deal_path %>
