@@ -1,4 +1,4 @@
-<h1>Transactions</h1>
+<%= render partial: 'shared/nav', locals: {title: 'Transactions', symbol:'<', url: categories_path}%>
 <div class"deals-header">
 <h3><%= @category.name %></h3>
 <p>$<%= @deals.sum {|deal| deal.amount} %></p>
@@ -9,4 +9,4 @@
   <% end %>
 </div>
 
-<button><%= link_to "Create new transaction", new_category_deal_path %></button>
+<button><%= link_to "Add a new transaction", new_category_deal_path %></button>

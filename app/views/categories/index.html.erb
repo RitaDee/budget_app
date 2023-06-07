@@ -1,5 +1,4 @@
-<h1>Categories</h1>
-
+<%= render partial: 'shared/nav', locals: {title: 'Categories', symbol:'', url: ''}%>
 <div id="categories">
   <% @categories.each do |category| %>
     <div class='deal'>
@@ -10,7 +9,6 @@
         <% end %>
       </h2>
     </div>
-    <%= render category %>
     <p>
       <%= link_to "Show this category", category %>
     </p>

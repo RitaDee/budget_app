@@ -22,6 +22,12 @@
   </div>
 
   <div>
+    <%= form.label :category, style: "display: block" %>
+     <%= form.collection_select :category_id, Category.all, :id, :name, { include_blank: 'Select Category', selected: @category.id }, required: true %>
+ </div>
+
+
+  <div>
     <%= form.submit class: 'create_transaction' %>
   </div>
 <% end %>

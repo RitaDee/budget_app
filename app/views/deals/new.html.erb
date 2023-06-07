@@ -1,4 +1,4 @@
-<h1>New Transaction</h1>
+<%= render partial: 'shared/nav', locals: {title: 'Add a new transcation', symbol:'<', url: category_deals_path}%>
 
 <%= render "form", deal: @deal, url: category_deals_path %>
 
