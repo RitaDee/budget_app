@@ -4,24 +4,24 @@ RSpec.describe Deal, type: :model do
   let(:user) { User.create(name: 'Rita Nkem') }
 
   describe 'associations' do
-  it 'belongs to an author' do
-    association = described_class.reflect_on_association(:author)
-    expect(association.macro).to eq(:belongs_to)
-    expect(association.options[:class_name]).to eq('User')
-  end
+    it 'belongs to an author' do
+      association = described_class.reflect_on_association(:author)
+      expect(association.macro).to eq(:belongs_to)
+      expect(association.options[:class_name]).to eq('User')
+    end
 
-  it 'has many deal_category with dependent destroy' do
-    association = described_class.reflect_on_association(:deal_category)
-    expect(association.macro).to eq(:has_many)
-    expect(association.options[:dependent]).to eq(:destroy)
-  end
+    it 'has many deal_category with dependent destroy' do
+      association = described_class.reflect_on_association(:deal_category)
+      expect(association.macro).to eq(:has_many)
+      expect(association.options[:dependent]).to eq(:destroy)
+    end
 
-  it 'has many categories through deal_category' do
-    association = described_class.reflect_on_association(:categories)
-    expect(association.macro).to eq(:has_many)
-    expect(association.options[:through]).to eq(:destroy)
+    it 'has many categories through deal_category' do
+      association = described_class.reflect_on_association(:categories)
+      expect(association.macro).to eq(:has_many)
+      expect(association.options[:through]).to eq(:destroy)
+    end
   end
-end
 
   describe 'validations' do
     it 'requires a name' do
