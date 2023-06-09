@@ -30,7 +30,7 @@
 
 **[Diva Spends]** is a classic example of a blog website. It is a functional website that show the list of Categories and associated operations to each categories.
 
-**[Video Description]()**
+**[Video Description](https://www.loom.com/share/ee9c117666734514bf3845ba37842d54)**
 
 ## 🛠 Built With <a name="built-with"></a>
 
