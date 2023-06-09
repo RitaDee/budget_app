@@ -1,0 +1,24 @@
+<%= render partial: 'shared/nav', locals: {title: 'Categories', symbol:'', url: ''}%>
+ 
+<% @categories.each do |category| %>
+    <div class='deal'>
+        <div class="deal-box">
+      <div>
+      <%= image_tag category.icon, class: 'category_icon' %> 
+      </div>
+           
+     <div class="category-cart">
+     <div class="category-details">
+        <h3 class='category_name'>
+          <%= link_to category.name, category_deals_path(category.id) %>
+         </h3>     
+        <p>$<%= category.calculate_amount %></p>
+     </div>
+     <p><%= category.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    </div>
+   
+  <% end %>
+
+
+<button><%= link_to "Add New category", new_category_path, class: 'category_button fixed-bottom' %></button>
