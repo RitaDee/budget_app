@@ -1,7 +1,6 @@
-# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
-RSpec.feature 'CategoriesIndices', type: :feature do
+RSpec.feature 'CategoriesIndices', type: :feature do # rubocop:disable Metrics/BlockLength
   describe 'Categories Index' do
     let(:file) { fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'test1.webp'), 'image/webp') }
     before :each do
