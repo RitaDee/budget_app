@@ -62,23 +62,23 @@ body {
 }
 
 .navbar {
-background-color: #3778c2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 12px;
+  background-color: #3778c2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
 }
 
 .arrow-link {
-font-size: 40px;
-    font-weight: 900;
-    color: #fff;
-    width: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  width: 20px;
 }
 
 h2.login {
-color: #fff;
-padding-top: 12px;
+  color: #fff;
+  padding-top: 12px;
   font-size: 20px;
 }
 
@@ -95,10 +95,10 @@ padding-top: 12px;
 }
 
 .logout-nav {
-    width: 100%;
-    margin-top: 23px;
-    margin-left: 50%;
-    font-size: 20px;
+  width: 100%;
+  margin-top: 23px;
+  margin-left: 50%;
+  font-size: 20px;
 }
 
 .login-field {
@@ -117,72 +117,63 @@ padding-top: 12px;
 }
 
 .category_icon {
-    height: 70px;
-    width: 70px;
+  height: 70px;
+  width: 70px;
 }
 
 .deal {
-width: 100%;
+  width: 100%;
 }
 
 .category-cart {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .deal-box {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    padding: 12px;
-    gap: 0.5rem;
-    background-color: #fff;
-    margin: 8px auto;
-    border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  padding: 12px;
+  gap: 0.5rem;
+  background-color: #fff;
+  margin: 8px auto;
+  border-radius: 8px;
 }
 
 .category-details {
-    display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        width: 100%;
-    }
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
 
-        .category_button {
-            padding: 8px;
-            margin: 12px auto;
-            display: block;
-            border: 2px solid #fff;
-            background-color: #5fb523;
-            border-radius: 4px;
-            color: #fff;
-        }
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+}
 
-                .fixed-bottom {
-                    position: fixed;
-                    bottom: 0;
-                    width: 100%;
-                    padding: 20px 0;
-                }
 .total_box {
-    background-color: #fff;
-    padding: 24px 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  background-color: #fff;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .deal-box1 {
-    display: flex;
-       justify-content: space-between;
-        width: 90%;
-        padding: 12px;
-        gap: 0.5rem;
-        background-color: #fff;
-        margin: 8px auto;
-        border-radius: 8px
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 12px;
+  gap: 0.5rem;
+  background-color: #fff;
+  margin: 8px auto;
+  border-radius: 8px;
 }
 
 .labela {
