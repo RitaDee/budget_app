@@ -1,15 +1,19 @@
-<section class='navbar'>
-  <nav>
-    <span class='back_symbol'>
-      <%= link_to symbol, url%>
-    </span>
-    <span class='nav_title'>
+<section >
+  <nav class='navbar'>
+  <P>
+    <span class='arrow-link'>
+      <%= link_to symbol, url, class: 'arrow-link' %>
+    </span> </P>
+    <h2 class='login'>
       <%= title %>
-    </span>
-    <span>
+    </h2>
+    <div class="logout-nav">
       <% if user_signed_in? %>
         <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path %>
       <% end %>
-    </span>
+    
+    </div>
   </nav>
 </section>

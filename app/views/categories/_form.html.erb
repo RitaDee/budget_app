@@ -11,17 +11,22 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.file_field :icon %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+  <div class="form_div">
+      <% form.label :name  %>
+      <%= form.text_field :name, placeholder: "Category Name", class: "login-field"%>
+      <% form.object.errors.full_messages_for(:name).each do |message|%>
+      <div><%= message %></div>
+      <%end%>
+    </div>
+      <br>
+     <div class="form_diva">
+    <%= form.label :icon, 'Chose icon:', class: 'labela' %><br>
+      <%= form.file_field :icon, class: "chose-icon" %>
+        <% form.object.errors.full_messages_for(:icon).each do |message|%>
+        <div><%= message %></div>
+        <%end%>
+     </div>
+     <br>
+      <%= form.submit "Create Category", class:"category_button"%>
+    </div>
+<%end%>
