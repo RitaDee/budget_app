@@ -36,7 +36,6 @@ body {
 .login,
 .signup {
   display: block;/* align-items: center; */
-  width: 90%;
   padding: 14px;
   margin: 12px auto;
   border: none;
@@ -66,6 +65,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 12px;
 }
 
@@ -95,10 +95,11 @@ h2.login {
 }
 
 .logout-nav {
-  width: 100%;
-  margin-top: 23px;
-  margin-left: 50%;
   font-size: 20px;
+}
+
+.logout-nav button {
+  padding: 0.5rem 1rem;
 }
 
 .login-field {

@@ -1,49 +1,52 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe CategoriesController, type: :controller do
-#   describe 'POST #create' do
-#     let(:user) { User.create(name: 'Test User', email: 'test@example.com', password: 'password') }
+RSpec.feature 'CategoriesIndices', type: :feature do
+  describe 'Categories Index' do
+    let(:file) { fixture_file_upload(Rails.root.join('spec', 'support', 'assets', 'test1.webp'), 'image/webp') }
+    before :each do
+      visit new_user_session_path
+      @user = User.create(name: 'ezekiel', email: 'ezekiel@example.com', password: '1111111111')
+      @category = Category.create(name: 'Food', author: @user)
+      @category.icon.attach(file)
+      @categorytwo = Category.create(name: 'Football', author: @user)
+      @categorytwo.icon.attach(file)
+      @categorythree = Category.create(name: 'Tacos', author: @user)
+      @categorythree.icon.attach(file)
+      @transaction = Deal.create(name: 'Athletics', amount: 100, author: @user)
+      
+      puts @category.errors.full_messages
 
-#     before { sign_in user }
+      fill_in 'Email', with: @user.email
+      fill_in 'Password', with: @user.password
+      click_on 'Log in'
+    end
 
-#     context 'with valid parameters' do
-#       let(:valid_params) do
-#         {
-#           category: {
-#             name: 'Test Category',
-#             icon: fixture_file_upload('path/to/test_icon.jpg', 'image/jpeg') # Assuming you have a test icon file
-#           }
-#         }
-#       end
+    it 'should have a title' do
+      expect(page).to have_current_path(categories_path)
+      expect(page).to have_content('Categories')
+    end
 
-#       it 'creates a new category' do
-#         expect {
-#           post :create, params: valid_params
-#         }.to change(Category, :count).by(1)
+    it 'should have a link to create a new category' do
+      expect(page).to have_current_path(categories_path)
+      expect(page).to have_content('Add New category')
+    end
 
-#         expect(response).to redirect_to(categories_path)
-#         expect(flash[:notice]).to eq('Category was successfully created.')
-#       end
-#     end
+    it 'should have a category name' do
+      expect(page).to have_current_path(categories_path)
+      @categories = Category.all
 
-#     context 'with invalid parameters' do
-#       let(:invalid_params) do
-#         {
-#           category: {
-#             name: '', # Invalid name
-#             icon: fixture_file_upload('path/to/test_icon.jpg', 'image/jpeg')
-#           }
-#         }
-#       end
+      @categories.each do |category|
+        expect(page).to have_content(category.name.capitalize)
+      end
 
-#       it 'does not create a new category' do
-#         expect {
-#           post :create, params: invalid_params
-#         }.not_to change(Category, :count)
+      expect(@categories.count).to eq(3)
+    end
 
-#         expect(response).to render_template(:new)
-#         expect(assigns(:category).errors[:name]).to include("can't be blank")
-#       end
-#     end
-#   end
-# end
+    it 'should link to the transaction index' do
+    expect(page).to have_current_path(categories_path)
+      click_on @category.name
+      expect(page).to have_current_path(category_deals_path(@category.id))
+      expect(page).to have_content('TRANSACTION')
+    end
+  end
+end

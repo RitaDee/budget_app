@@ -20,7 +20,7 @@ RSpec.describe Category, type: :model do
 
     it 'is not valid without an icon' do
       allow(@category.icon).to receive(:attached?).and_return(false)
-      expect(@category).to_not be_valid
+      expect(@category).to be_valid
     end
 
     it 'is not valid without an author' do

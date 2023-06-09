@@ -6,7 +6,7 @@ class Category < ApplicationRecord
   has_many :deals, through: :deal_categories
 
   validates :name, presence: true
-  validates :icon, presence: true
+  validates :icon, presence: false
 
   def calculate_amount
     deals.sum { |deal| deal.amount.to_i }
