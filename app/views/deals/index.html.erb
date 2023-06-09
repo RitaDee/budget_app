@@ -1,5 +1,6 @@
-<%= render partial: 'shared/nav', locals: {title: 'Transactions', symbol:'<', url: categories_path}%>
-<div class"deals-header">
+<%= render partial: 'shared/nav', locals: {title:'TRANSACTION', symbol:'←', url: :back}%>
+<div class="total_box">
+
 <h3><%= @category.name %></h3>
 <p>$<%= @deals.sum {|deal| deal.amount} %></p>
 </div>
@@ -9,4 +10,4 @@
   <% end %>
 </div>
 
-<button><%= link_to "Add a new transaction", new_category_deal_path %></button>
+<button><%= link_to "Add a new transaction", new_category_deal_path, class: 'category_button fixed-bottom' %></button>

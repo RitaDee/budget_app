@@ -1,9 +1,4 @@
-<%= render partial: 'shared/nav', locals: {title: 'Add a new transcation', symbol:'<', url: category_deals_path}%>
+<%= render partial: 'shared/nav', locals: {title: 'Add a new transcation', symbol:'←', url: category_deals_path}%>
 
 <%= render "form", deal: @deal, url: category_deals_path %>
 
-<br>
-
-<div>
-  <%= link_to "Back to deals", category_deals_path %>
-</div>

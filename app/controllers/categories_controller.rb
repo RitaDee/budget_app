@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.includes(:deals).where(author: current_user)
+    # @total_deals = categories.joins(:deals).sum('deals.amount')
   end
 
   # GET /categories/1 or /categories/1.json

@@ -7,4 +7,8 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
+
+  def calculate_amount
+    deals.sum { |deal| deal.amount.to_i }
+  end
 end
