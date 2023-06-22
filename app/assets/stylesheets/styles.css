@@ -223,19 +223,20 @@ h2.login {
     margin-top: 14%;
   }
 
-    .login,
-    .signup {
-      width: 50%;
-    }
+  .login,
+  .signup {
+    width: 50%;
+  }
 
-.btn_category {
-      padding: 1%;
-        width: 101%;
-        margin: 0% -0.5%;
-}
+  .btn_category {
+    padding: 1%;
+    width: 101%;
+    margin: 0% -0.5%;
+  }
 
-.category_button {
-  padding: 1% 1%;
-}
+  .category_button {
+    padding: 1% 1%;
+  }
+
   /* Add more styles for laptop screens */
 }
