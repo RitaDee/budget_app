@@ -155,7 +155,6 @@ h2.login {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 20px 0;
 }
 
 .total_box {
@@ -193,16 +192,51 @@ h2.login {
 }
 
 .category_button {
-  padding: 8px;
   margin: 12px auto;
   display: block;
-  border: 2px solid #fff;
   background-color: #5fb523;
-  border-radius: 4px;
+  border-radius: 3px;
+  border: none;
   color: #fff;
+  padding: 3% 3%;
 }
 
 .chose-icon {
   display: block;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  body {
+    /* Add styles for laptop screens */
+    background-color: lightgray;
+  }
+
+  .greeting {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 20%;
+    text-align: center;
+  }
+
+  .btn-welcome {
+    margin-top: 14%;
+  }
+
+  .login,
+  .signup {
+    width: 50%;
+  }
+
+  .btn_category {
+    padding: 1%;
+    width: 101%;
+    margin: 0% -0.5%;
+  }
+
+  .category_button {
+    padding: 1% 1%;
+  }
+
+  /* Add more styles for laptop screens */
 }
