@@ -37,9 +37,14 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Client</summary>
+  <summary>
+    Client
+  </summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li>
+      <a href="https://rubyonrails.org/">
+        Ruby on Rails</a>
+    </li>
   </ul>
 </details>
 
